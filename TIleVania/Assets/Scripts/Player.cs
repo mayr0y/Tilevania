@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 30f;
+    [SerializeField] float climpSpeed = 5f;
 
     Rigidbody2D myRigidbody;
     Animator myAnimator;
@@ -13,14 +14,18 @@ public class Player : MonoBehaviour {
 
     bool isAlive = true;
 
+    float gravityScaleAtStart;
+
     private void Start() {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myCollider2D = GetComponent<Collider2D>();
+        gravityScaleAtStart = myRigidbody.gravityScale;
     }
 
     private void Update() {
         Run();
+        ClimbLadder();
         Jump();
         FlipSprite();
     }
@@ -46,6 +51,22 @@ public class Player : MonoBehaviour {
             Vector2 jumpVelosity = new Vector2(myRigidbody.velocity.x, jumpSpeed);
             myRigidbody.velocity += jumpVelosity;
         }
+    }
+
+    private void ClimbLadder() {
+        if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
+            myAnimator.SetBool("Climbing", false);
+            myRigidbody.gravityScale = gravityScaleAtStart;
+            return;
+        }
+
+        float controlThrow = Input.GetAxis("Vertical") * climpSpeed;
+        Vector2 climbVelosity = new Vector2(myRigidbody.velocity.x, controlThrow);
+        myRigidbody.velocity = climbVelosity;
+        myRigidbody.gravityScale = 0f;
+
+        bool verticalSpeedPlayer = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
+        myAnimator.SetBool("Climbing", verticalSpeedPlayer);
     }
 
     private void FlipSprite() {
