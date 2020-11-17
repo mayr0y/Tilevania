@@ -729,6 +729,12 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/lzrv/Documents/GitHub/Tilevania/TIleVania/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>/Users/lzrv/Documents/GitHub/Tilevania/TIleVania/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>/Users/lzrv/Documents/GitHub/Tilevania/TIleVania/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
