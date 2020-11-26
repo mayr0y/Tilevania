@@ -1,12 +1,12 @@
-﻿<Properties StartupConfiguration="{D14DDDD1-C454-6B05-EACB-5ABD4AD11482}|">
+﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="22" Column="47" />
+      <File FileName="Assets/Scripts/Player.cs" Line="66" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="84b9f283-91f7-42c4-b5e0-b2bf3ce56284" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d866e93a-9227-49b7-91fe-b8f78ca0ea8b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
