@@ -19,19 +19,19 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     private void Movement() {
-        if (isFacingRight()) {
+        if (IsFacingRight()) {
             myRigidbody.velocity = new Vector2(moveSpeed, 0f);
         }
         else {
             myRigidbody.velocity = new Vector2(-moveSpeed, 0f);
         }
     }
-
-    private bool isFacingRight() {
+   
+    private bool IsFacingRight() {
         return transform.localScale.x > 0;
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), 1f);
+        transform.localScale = new Vector2(-Mathf.Sign(myRigidbody.velocity.x), 1f);
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 30f;
     [SerializeField] float climpSpeed = 5f;
+    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
     Rigidbody2D myRigidbody;
     Animator myAnimator;
@@ -23,13 +25,17 @@ public class Player : MonoBehaviour {
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = myRigidbody.gravityScale;
+        
     }
 
     private void Update() {
+        if (!isAlive) { return; }
+        Death();
         Run();
         ClimbLadder();
         Jump();
         FlipSprite();
+        StartCoroutine(TimeToLoad());
     }
 
     private void Run() {
@@ -69,6 +75,21 @@ public class Player : MonoBehaviour {
 
         bool verticalSpeedPlayer = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("Climbing", verticalSpeedPlayer);
+    }
+
+    private void Death() {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) {
+            myRigidbody.velocity = deathKick;
+            myAnimator.SetTrigger("Die");
+            isAlive = false;
+        }
+    }
+
+    IEnumerator TimeToLoad() {
+        if(!isAlive) {
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("Level 1");
+        }
     }
 
     private void FlipSprite() {
