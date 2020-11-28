@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{D14DDDD1-C454-6B05-EACB-5ABD4AD11482}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="58" Column="33" />
-      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="37" Column="22" IsPinned="True" />
+      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="30" Column="35" />
+      <File FileName="Assets/Scripts/LevelExit.cs" Line="7" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

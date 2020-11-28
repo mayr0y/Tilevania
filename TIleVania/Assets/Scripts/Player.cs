@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
     [SerializeField] float runSpeed = 5f;
-    [SerializeField] float jumpSpeed = 30f;
+    [SerializeField] float jumpSpeed = 22f;
     [SerializeField] float climpSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
@@ -35,7 +34,6 @@ public class Player : MonoBehaviour {
         ClimbLadder();
         Jump();
         FlipSprite();
-        StartCoroutine(TimeToLoad());
     }
 
     private void Run() {
@@ -82,13 +80,6 @@ public class Player : MonoBehaviour {
             myRigidbody.velocity = deathKick;
             myAnimator.SetTrigger("Die");
             isAlive = false;
-        }
-    }
-
-    IEnumerator TimeToLoad() {
-        if(!isAlive) {
-            yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene("Level 1");
         }
     }
 
