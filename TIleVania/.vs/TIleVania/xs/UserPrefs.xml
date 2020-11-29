@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{D14DDDD1-C454-6B05-EACB-5ABD4AD11482}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/VerticalScroll.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="37" Column="22" IsPinned="True" />
+      <File FileName="Assets/Scripts/Player.cs" Line="83" Column="29" IsPinned="True" />
       <File FileName="Assets/Scripts/EnemyMovement.cs" Line="30" Column="35" />
-      <File FileName="Assets/Scripts/LevelExit.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/LevelExit.cs" Line="17" Column="10" />
+      <File FileName="Assets/Scripts/Menu.cs" Line="15" Column="28" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="44" Column="45" />
+      <File FileName="Assets/Scripts/VerticalScroll.cs" Line="7" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

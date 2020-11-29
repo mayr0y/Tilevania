@@ -73,6 +73,7 @@ public class Player : MonoBehaviour {
 
         bool verticalSpeedPlayer = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("Climbing", verticalSpeedPlayer);
+        myAnimator.SetBool("Running", false);
     }
 
     private void Death() {
@@ -80,6 +81,7 @@ public class Player : MonoBehaviour {
             myRigidbody.velocity = deathKick;
             myAnimator.SetTrigger("Die");
             isAlive = false;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 
